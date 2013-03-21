@@ -63,6 +63,7 @@ $string['label']='Label';
 $string['missingurl']='Url Is Missing.Please enter the url';
 $string['missinglabel']='Label Is Missing.Please enter the label';
 $string['imagecannot']='Image can not save';
+$string['urleg']='<span style="color:#ddd;">URL-Eg:mys/index.php, course/view.php?id=10 </span> ';
 
 
 

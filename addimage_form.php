@@ -12,6 +12,7 @@ class dashboard_image_form extends moodleform {
         // visible elements
         $mform->addElement('text', 'url',get_string('thurl','theme_aadar'));
        $mform->addRule('url', get_string('missingurl','theme_aadar'), 'required', null, 'client');
+	   $mform->addElement('static', 'urleg','',get_string('urleg','theme_aadar'));
         $mform->addElement('text', 'label',get_string('label','theme_aadar'));
        $mform->addRule('label', get_string('missinglabel','theme_aadar'), 'required', null, 'client');
 

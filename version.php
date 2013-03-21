@@ -19,7 +19,7 @@
  *
  * @package    Theme
  * @subpackage Aadar
- * @copyright  2010 Niranjan(http://newschoollearning.com/)
+ * @copyright  2013 Niranjan(niranjan@eabyas.in)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

@@ -158,21 +158,6 @@ if ($mform->is_cancelled()) {
     }
 }
 
-$out = array();
- 
-$fs = get_file_storage();
-$files = $fs->get_area_files(5, 'user', 'draft',$draftitemid);
- 
-foreach ($files as $file) {
-    
-     
-    $url = "{$CFG->wwwroot}/draftfile.php/{$file->get_contextid()}/user/draft";
-    $filename = $file->get_filename();
-    $fileurl = $url.$file->get_filepath().$file->get_itemid().'/'.$filename;
-    $out[] = html_writer::link($fileurl, $filename);
-}
- 
-$br = html_writer::empty_tag('br');
  
 
 
