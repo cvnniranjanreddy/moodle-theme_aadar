@@ -53,6 +53,10 @@ echo $OUTPUT->doctype() ?>
 <head>
     <title><?php echo $PAGE->title ?></title>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->pix_url('favicon', 'theme')?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/local/datagrid/demo_table.css" />
+<script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/local/datagrid/jquery_dataTables.js"></script>
+<script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/local/datagrid/test.js"></script>
+<script type="text/javascript" src="<?php echo $CFG->wwwroot;?>/local/datagrid/jquery.js"></script>
     <meta name="description" content="<?php p(strip_tags(format_text($SITE->summary, FORMAT_HTML))) ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
 </head>
@@ -134,23 +138,28 @@ echo $OUTPUT->doctype() ?>
  }  
   getimgurl(1);
 $output=array();
+global $COURSE;
+$context = context_course::instance($COURSE->id);
+
+$contextid = $context->id;
+
 ?>
                              
  <h1>Admin Dashboard </h1>
          <div class='upper'>
                                      <div style='border:0px solid lightgray; width:33%;height:100%; float:left;text-align:center;'>
 				      <div class="imgthree" ><a href="<?php  $output=getimgurl(1);  echo $CFG->wwwroot.'/'.$output[1]; ?>">  <img src="<?php  echo $output[0]; ?>" width="100px" height="100px" alt="Top One" > </a></div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?><a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=1&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" ></a></div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?><a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=1&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" ></a></div>
 				     </div>
                                     
                                      <div style='border:0px solid lightgray; width:33%;height:100%; float:left;text-align:center;'>
 				      <div class="imgthree" ><a href="<?php  $output=getimgurl(2);  echo $CFG->wwwroot.'/'.$output[1]; ?>"><img src="<?php  echo $output[0]; ?>" width="100px" height="100px" alt="Top Two" > </a></div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=2&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=2&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
 				    </div>
                                     
                                      <div style='border:0px solid lightgray; width:33%;height:100%; float:left;text-align:center;'>
 				     <div class="imgthree" > <a href="<?php  $output=getimgurl(3);  echo $CFG->wwwroot.'/'.$output[1]; ?>"><img src="<?php echo $output[0]; ?>" width="100px" height="100px" alt="Top Three" ></a> </div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=3&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=3&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
 				    </div>
                                     
                                     
@@ -159,15 +168,15 @@ $output=array();
                               <div class='lower'>
 				 <div style='border:0px solid lightgray; width:33%;height:100%; float:left;text-align:center;'>
 				    <div class='imgthree'  > <a href="<?php  $output=getimgurl(4);  echo $CFG->wwwroot.'/'.$output[1]; ?>"><img src="<?php echo $output[0]; ?>" width="100px" height="100px" alt="Lower One" > </a> </div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=4&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=4&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
 				 </div>
                                  <div style='border:0px solid lightgray; width:33%;height:100%; float:left;text-align:center;'>
 			              <div class='imgthree' ><a href="<?php  $output=getimgurl(5);  echo $CFG->wwwroot.'/'.$output[1]; ?>"> <img src="<?php echo $output[0]; ?>" width="100px" height="100px" alt="Lower Two" > </a> </div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=5&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=5&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
 				 </div>
               		         <div style='border:0px solid lightgray; width:32%;height:100%; float:left;text-align:center;'>
 				   <div class='imgthree'><a href="<?php  $output=getimgurl(6);  echo $CFG->wwwroot.'/'.$output[1]; ?>"><img src="<?php echo $output[0]; ?>" width="100px" height="100px" alt="Lower Three" ></a></div>
-				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=6&sectionid=6&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
+				      <div class='coursetext' ><?php  echo $output[2]; ?> <a href="<?php echo $CFG->wwwroot;?>/theme/aadar/addimage.php?contextid=<?php echo $contextid; ?>&sectionid=6&userid=<?php echo $USER->id?>" ><img src="<?php echo $OUTPUT->pix_url('edit', 'theme'); ?>" >  </a> </div>
 				 </div>
                               </div>
                      <div style="visibility:hidden;">spacer </div>       
